@@ -22,9 +22,11 @@ terraform {
 }
 
 provider "aws" {
-  profile = "default"
+  #profile = "default"
   region  = "eu-west-2"
 }
+
+#change to test
 
 resource "aws_instance" "test_instance" {
   instance_type          = "t2.micro"
