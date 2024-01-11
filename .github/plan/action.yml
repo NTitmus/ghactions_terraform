@@ -31,11 +31,11 @@ runs:
         terraform_wrapper: false
 
     - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ inputs.terraform_sa }}
-          aws-secret-access-key: ${{ inputs.aws_sak }}
-          #aws-region: ${{ env.AWS_REGION }}
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ inputs.terraform_sa }}
+        aws-secret-access-key: ${{ inputs.aws_sak }}
+        #aws-region: ${{ env.AWS_REGION }}
 
     - name: Terraform Init
       id: init
