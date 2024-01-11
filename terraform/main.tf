@@ -26,6 +26,8 @@ provider "aws" {
   region  = "eu-west-2"
 }
 
+#change to test
+
 resource "aws_instance" "test_instance" {
   instance_type          = "t2.micro"
   ami                    = "ami-0cfd0973db26b893b"
