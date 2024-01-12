@@ -13,7 +13,7 @@ inputs:
   terraform_version: 
     description: 'Terraform Version'
     required: true
-    default: 1.2.9
+    default: 1.6.6
   github_token: 
     description: 'github secret'
     required: true
@@ -31,7 +31,7 @@ runs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
       with:
-        terraform_version: ${{ inputs.terraforom_version }}
+        terraform_version: ${{ inputs.terraform_version }}
         terraform_wrapper: false
 
     - name: Configure AWS Credentials
@@ -57,6 +57,8 @@ runs:
         pr: ${{ inputs.pr_id }}
         name: ${{ inputs.pr_id }}-tf-plan
         path: ${{ inputs.terraform_directory }}
+        check_artifacts: true
+        allow_forks: false
 
     - name: Terraform Apply
       id: apply

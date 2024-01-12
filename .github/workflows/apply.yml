@@ -33,3 +33,4 @@ jobs:
           aws_sak: ${{ secrets.SAK }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           pr_id: ${{ steps.pr-id.outputs.PR_NUMBER }}
+          
