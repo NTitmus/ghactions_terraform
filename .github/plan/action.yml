@@ -56,6 +56,13 @@ runs:
         echo 'plan<<EOF' >> $GITHUB_OUTPUT
         terraform plan -no-color -out=tfplan >> $GITHUB_OUTPUT
         echo 'EOF' >> $GITHUB_OUTPUT
+    
+    - name: Print the tfplan file
+      id: print tfplan
+      working-directory: ${{ inputs.terraform_directory }}
+      shell: bash
+      run: |
+        echo tfplan
 
     - name: Save Artifact
       id: save-artifact
