@@ -58,7 +58,7 @@ runs:
         echo 'EOF' >> $GITHUB_OUTPUT
     
     - name: Print the tfplan file
-      id: print tfplan
+      id: print_tfplan
       working-directory: ${{ inputs.terraform_directory }}
       shell: bash
       run: |
