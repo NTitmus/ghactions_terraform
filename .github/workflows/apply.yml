@@ -11,6 +11,9 @@ env:
 jobs:
   terraform_apply:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
     if: github.event.review.state == 'approved'
     steps:
       - uses: actions/checkout@v3
